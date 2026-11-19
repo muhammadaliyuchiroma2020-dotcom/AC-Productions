@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+=====================================================================
+  AC PRODUCTIONS WEBSITE  |  HOW TO EDIT (read this first)
+=====================================================================
+  FILES (keep all in the same folder):
+    index.html   the page content (text, sections)   <- you are here
+    style.css    colours, fonts, hover, animation
+    script.js    behaviour (menu, filters, showreel, form)
+    logo.png     YOUR LOGO (you add this file)
+
+  TO OPEN: double-click index.html
+
+  5 THINGS TO CHANGE:
+    1. LOGO      save your logo as  logo.png  in this folder. Done.
+    2. SHOWREEL  script.js, the line starting  const REEL_URL  (paste your YouTube embed link)
+    3. CONTACT   search this file for  EDIT-CONTACT  and change email/phone
+    4. PROJECTS  search for  EDIT-PROJECT  and change titles / add images
+    5. TEXT      search for  EDIT-TEXT  (headline, about, stats)
+
+  TO CHANGE COLOURS: style.css, top of file, the :root block.
+=====================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AC Productions</title>
+<meta name="description" content="AC Productions: film, commercials, music videos and event coverage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Reusable logo placeholder. Two tall side-by-side frames (red + white). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-ph" viewBox="0 0 64 64">
+    <rect x="7" y="5" width="21" height="54" fill="none" stroke="#E4161F" stroke-width="3.5"/>
+    <rect x="36" y="5" width="21" height="54" fill="none" stroke="#F6F3F1" stroke-width="3.5"/>
+  </symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="AC Productions home">
+      <!-- LOGO SLOT: put your logo file (logo.png) in the same folder as this page -->
+      <span class="logo-slot">
+        <svg class="logo-ph"><use href="#logo-ph"/></svg>
+        <img src="AC Productions 3D.png" alt="AC Productions logo">
+      </span>
+      <span class="brand-name">AC PRODUCTIONS</span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn solid">Book a shoot</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="hero">
+  <div class="glow"></div>
+  <div class="frames" aria-hidden="true">
+    <!-- Add images: style="--img:url('hero1.jpg')" -->
+    <div class="frame a" data-depth="14"><i></i><em>SCENE 01</em></div>
+    <div class="frame b" data-depth="-14"><i></i><em>SCENE 02</em></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <!-- EDIT-TEXT: headline (3 lines) -->
+      <h1 aria-label="We frame stories worth watching">
+        <span class="ln"><span>We frame</span></span>
+        <span class="ln"><span>stories</span></span>
+        <span class="ln"><span>worth watching</span></span>
+      </h1>
+      <p class="lead">AC Productions makes films, commercials and music videos with a cinematic eye, from first idea to final grade.</p>
+      <div class="cta">
+        <button class="btn solid" data-open-reel>
+          Watch showreel
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <a href="#work" class="btn ghost">See our work</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</div>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Film</span><span>Commercials</span><span>Music videos</span><span>Events</span><span>Colour grading</span><span>Title design</span>
+    <span>Film</span><span>Commercials</span><span>Music videos</span><span>Events</span><span>Colour grading</span><span>Title design</span>
+  </div>
+</div>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Selected<br>work</h2>
+      <p>A few of the stories we have shot and finished. Tap a filter to narrow them down.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filter work">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="film">Film</button>
+      <button data-filter="commercial">Commercial</button>
+      <button data-filter="music">Music video</button>
+      <button data-filter="event">Event</button>
+    </div>
+    <!-- To add a cover image, put style="--img:url('work1.jpg')" on the .card -->
+    <!-- EDIT-PROJECT: change each title below. For a cover image add  style="--img:url('work1.jpg')"  to the <article> -->
+    <div class="grid rv">
+      <article class="card" data-cat="film" tabindex="0" style="--img:https://youtu.be/_rmom6_7vXw?si=h0qUQ1QV1UFEG_PK('IMG_6443.JPG');--c1:#4a050a;--c2:#0b0b0b">
+        <div class="thumb"></div>
+        <div class="info"><small>Film</small><h3>Project title one</h3><span class="view">Watch project</span></div>
+      </article>
+      <article class="card" data-cat="commercial" tabindex="0" style="--c1:#262626;--c2:#050505">
+        <div class="thumb"></div>
+        <div class="info"><small>Commercial</small><h3>Project title two</h3><span class="view">Watch project</span></div>
+      </article>
+      <article class="card" data-cat="music" tabindex="0" style="--c1:#6b0a10;--c2:#120405">
+        <div class="thumb"></div>
+        <div class="info"><small>Music video</small><h3>Project title three</h3><span class="view">Watch project</span></div>
+      </article>
+      <article class="card" data-cat="event" tabindex="0" style="--c1:#1c1c1c;--c2:#3a0508">
+        <div class="thumb"></div>
+        <div class="info"><small>Event</small><h3>Project title four</h3><span class="view">Watch project</span></div>
+      </article>
+      <article class="card" data-cat="film" tabindex="0" style="--c1:#300307;--c2:#161616">
+        <div class="thumb"></div>
+        <div class="info"><small>Film</small><h3>Project title five</h3><span class="view">Watch project</span></div>
+      </article>
+      <article class="card" data-cat="commercial" tabindex="0" style="--c1:#0d0d0d;--c2:#5c080e">
+        <div class="thumb"></div>
+        <div class="info"><small>Commercial</small><h3>Project title six</h3><span class="view">Watch project</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>What we<br>make</h2>
+      <p>Pick one service or hand us the whole production.</p>
+    </div>
+    <ul class="svc rv">
+      <li><h3>Film production</h3><p>Short films, documentaries and series, shot and finished with a cinematic look.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+      <li><h3>Commercials</h3><p>Ads and brand videos that sell a product and still feel like cinema.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+      <li><h3>Music videos</h3><p>Concept, shoot and edit for artists who want their visuals to stand out.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+      <li><h3>Event coverage</h3><p>Weddings, launches and conferences filmed in full, with a highlight edit.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+      <li><h3>Edit and grade</h3><p>Cutting, colour grading, sound clean-up and delivery in any format.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+      <li><h3>Titles and graphics</h3><p>Opening titles, credits and motion graphics with transparent overlays for your editor.</p><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 4v16M4 12h16"/></svg></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap about">
+    <!-- Add a photo: style="--img:url('about.jpg')" -->
+    <div class="pic rv" role="img" aria-label="AC Productions team"></div>
+    <div class="rv">
+      <h2>Small crew.<br>Big frames.</h2>
+      <p>AC Productions is an independent studio founded by Muhammad AC. We care about light, framing and pace, and we treat every job, from a 30 second ad to a full film, like a feature.</p>
+      <p>You talk to the person holding the camera, so your idea reaches the screen without getting lost on the way.</p>
+      <!-- EDIT-TEXT: your real numbers -->
+      <div class="stats">
+        <div><b data-count="50" data-suffix="+">0</b><span>Projects delivered</span></div>
+        <div><b data-count="30" data-suffix="+">0</b><span>Happy clients</span></div>
+        <div><b data-count="5" data-suffix="">0</b><span>Years behind the lens</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact" style="border-top:1px solid var(--line)">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <h2>Let's shoot<br><em>something.</em></h2>
+      <div class="ways">
+        <!-- EDIT-CONTACT: your email (change it in both places) -->
+        <a href="muhammadaliyuchiroma2020@gmail.com">muhammadaliyuchiroma2020@gmail.com</a>
+        <!-- EDIT-CONTACT: WhatsApp number (country code, no + or spaces) -->
+        <a href="https://wa.me/2349022403565" target="_blank" rel="noopener">WhatsApp: +234 902 240 3565</a>
+      </div>
+    </div>
+    <form class="rv" id="form" novalidate>
+      <div class="field"><input id="f-name" name="name" placeholder=" " required><label for="f-name">Your name</label></div>
+      <div class="field"><input id="f-email" name="email" type="email" placeholder=" " required><label for="f-email">Email</label></div>
+      <div class="field">
+        <select id="f-type" name="type" required>
+          <option value="" hidden></option>
+          <option>Film</option><option>Commercial</option><option>Music video</option><option>Event coverage</option><option>Edit and grade</option><option>Something else</option>
+        </select>
+        <label for="f-type">What do you need?</label>
+      </div>
+      <div class="field"><textarea id="f-msg" name="msg" placeholder=" " required></textarea><label for="f-msg">Tell us about the project</label></div>
+      <button class="btn solid" type="submit" style="width:max-content">Send message</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brand-block">
+        <!-- LOGO SLOT (large): also uses logo.png -->
+        <span class="logo-slot">
+          <svg class="logo-ph"><use href="#logo-ph"/></svg>
+          <img src="AC Productions 3D.png" alt="">
+        </span>
+        <p>Film, commercials and music videos with a cinematic eye.</p>
+      </div>
+      <div class="socials">
+        <a href="https://youtube.com/@accinematography?si=Mxzu_YMl4f336SoW" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/accinematography?xtok=amhmd2Jub3J4c2l2" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@accinematography?_r=1&_t=ZS-9BQxdbIF5FM" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://wa.me/2349022403565?s=t" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="big" aria-hidden="true">AC Productions</div>
+    <div class="copy"><span>&copy; <span id="yr"></span> AC Productions. All rights reserved.</span><a href="#top">Back to top</a></div>
+  </div>
+</footer>
+
+<!-- ============ SHOWREEL MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Showreel">
+  <div class="box" id="reel">
+    <button class="close" id="close">Close</button>
+    <!-- Paste your YouTube embed link here, e.g. https://www.youtube.com/embed/VIDEO_ID -->
+    <p id="reel-msg">Add your showreel: set REEL_URL in the script at the bottom of this file to your YouTube embed link.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
